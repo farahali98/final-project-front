@@ -1,9 +1,8 @@
-
 body{
 	margin:0;
-	color:#6a6f8c;
-	background:#c8c8c8;
-	font:600 16px/18px 'Open Sans',sans-serif;
+	color:black;
+	background:white;
+	font:600 16px/18px 'DM Sans, sans-serif';
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
@@ -11,20 +10,20 @@ body{
 a{color:inherit;text-decoration:none}
 
 .login-wrap{
-	width:100%;
+	/* width:100%; */
 	margin:auto;
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-	/* background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center; */
+	background:url('') no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
-	width:100%;
-	height:100%;
+	width:110%;
+	height:155%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
-	background:rgba(40,57,101,.9);
+	background:rgb(240, 79, 71);
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -58,7 +57,7 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
 	color:#fff;
-	border-color:#1161ee;
+	border-color:rgb(240, 79, 71);
 }
 .login-form{
 	min-height:345px;
@@ -84,7 +83,7 @@ a{color:inherit;text-decoration:none}
 	background:rgba(255,255,255,.1);
 }
 .login-form .group input[data-type="password"]{
-	text-security:circle;
+	/* text-security:circle; */
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
@@ -92,7 +91,7 @@ a{color:inherit;text-decoration:none}
 	font-size:12px;
 }
 .login-form .group .button{
-	background:#1161ee;
+	background:rgb(240, 79, 71);
 }
 .login-form .group label .icon{
 	width:15px;
@@ -126,7 +125,7 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 }
 .login-form .group .check:checked + label .icon{
-	background:#1161ee;
+	background:rgb(240, 79, 71);
 }
 .login-form .group .check:checked + label .icon:before{
 	transform:scale(1) rotate(45deg);
@@ -149,3 +148,76 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+
+
+.navbar-light .navbar-nav .nav-link	{
+	color: rgb(240, 79, 71) !important;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-link:hover	{
+color: rgb(240, 79, 71) !important;
+}
+.navbar-light .navbar-brand{
+	color:rgb(240, 79, 71) !important;
+}
+.navbar-light .navbar-brand:hover{
+	color: rgb(240, 79, 71)	 !important;
+}
+
+
+
+@media only screen and (max-width: 760px) {
+.container-fluid.parallex{
+	padding-top: 40%;}
+
+	.card-body{
+		justify-content: center;
+     flex-direction: column;
+	}
+	.reasons{
+		flex-direction: column;
+	}
+
+}
+
+
+.page-title:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 15%; /* Change this to whatever width you want. */
+    padding-top: 5px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid #f04f47; /* This creates the border. Replace black with whatever color you want. */
+}
+.description span{
+	content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    padding-left: 5px; /* This creates some space between the element and the border. */
+    /* border-righ: 1px solid white; */
+}
+.partners img{
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+	width:100px;
+	height: 100px;
+}
+.food{
+		display: grid;
+		grid-auto-columns: auto;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 10%;
+		padding-left: 20%;
+		padding-top: 10%;
+		padding-bottom: 20%;
+	  }
+.food img{
+	width:200px;
+	height:200px
+}
+
+
+

@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from 'react'
-import {Router,Link,Route} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Router, Link, Route, Redirect } from 'react-router-dom'
 import Axios from 'axios';
-
+import Menu from './menu/Menu'
 const Login = () => {
 
   const [email, setEmail] = useState('');
@@ -10,9 +10,12 @@ const Login = () => {
   const [authErr, setAuthErr] = useState('');
   const [passErr, setPassErr] = useState('');
   const [emailErr, setEmailErr] = useState('');
-  const [name,setName]=useState("");
-  const [newName,setNewName]=useState("");
-
+  const [name, setName] = useState("");
+  const [newName, setNewName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [location, setLocation] = useState("");
+  const [url, setUrl] = useState("");
+  const [image, setImage] = useState("");
 
   const HandleLogin = async (e) => {
     e.preventDefault();
@@ -42,7 +45,7 @@ const Login = () => {
       setAuthErr('');
     } else {
       try {
-        await Axios.post("http://localhost:8000/api/login", {
+        await Axios.post("http://localhost:8000/api/business/login", {
           email: email,
           password: password,
 
@@ -52,14 +55,18 @@ const Login = () => {
           setPassErr("");
           setToken(response.data.access_token)
           {
-              response.data &&
+            response.data &&
               response.data.access_token &&
               localStorage.setItem("token", response.data.access_token);
-
+            localStorage.setItem("id", response.data.user.id);
+            localStorage.setItem("email", response.data.user.email);
+            localStorage.setItem("password", response.data.user.password);
+            localStorage.setItem("location", response.data.user.location);
+            localStorage.setItem("phone_number", response.data.user.phone_number);
+            localStorage.setItem("url", response.data.user.url);
+            localStorage.setItem("image", response.data.user.image);
+            localStorage.setItem("name", response.data.user.name);
           }
-
-
-
         });
       } catch (err) { console.log(err) };
 
@@ -69,86 +76,132 @@ const Login = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-        const url = "http://127.0.0.1:8000/api/register";
-        const body = new FormData();
-        body.append("name", newName);
-        body.append("email", email);
-        body.append("password", password);
-    
-        await Axios
-            .post(url, body, {
-                headers: {
-                    // "content-type": "multipart/form-data",
-                    Accept: "application/json",
+      const link = "http://127.0.0.1:8000/api/business/register";
+      const body = new FormData();
+      body.append("name", name);
+      body.append("email", email);
+      body.append("password", password);
+      body.append("location", location);
+      body.append("url", url);
+      body.append("image", image);
+      body.append("phone_number", phoneNumber);
+      await Axios
+        .post(link, body, {
+          headers: {
+            // "content-type": "multipart/form-data",
+            // Accept: "application/json",
+            'content-type': 'multipart/form-data',
+            'Authorization': "Bearer " + localStorage.getItem('token')
+          }
+        }).then((response) => {
+          setToken(response.data.access_token)
+          {
+            response.data &&
+              response.data.access_token &&
+              localStorage.setItem("token", response.data.access_token);
+            localStorage.setItem("id", response.data.user.id);
+            localStorage.setItem("email", response.data.user.email);
+            localStorage.setItem("password", response.data.user.password);
+            localStorage.setItem("location", response.data.user.location);
+            localStorage.setItem("phone_number", response.data.user.phone_number);
+            localStorage.setItem("url", response.data.user.url);
+            localStorage.setItem("image", response.data.user.image);
+            localStorage.setItem("name", response.data.user.name);
+          }
 
-                },
-            })
+        })
 
     } catch (error) {
-        console.log(error)
+      console.log(error)
 
     }
-}
+  }
+  if (token) return <Redirect exact to="/profile" />
 
-    return (
 
-    <div className="login-wrap">
-	<div className="login-html">
-		<input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked/><label htmlFor="tab-1" className="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" className="sign-up"/><label htmlFor="tab-2" className="tab">Sign Up</label>
-		<div className="login-form">
-			<div className="sign-in-htm">
-				<div className="group">
+  return (
+    <>
+          <Menu />
+
+    <div style={{paddingTop:'10%'}}>
+      <h2>LOGIN AS A BUSINESS ACCOUNT</h2>
+
+      <div className="login-wrap">
+        <div className="login-html">
+          <input id="tab-1" type="radio" name="tab" className="sign-in" defaultChecked /><label htmlFor="tab-1" className="tab">Sign In</label>
+          <input id="tab-2" type="radio" name="tab" className="sign-up" /><label htmlFor="tab-2" className="tab">Sign Up</label>
+          <div className="login-form">
+            <div className="sign-in-htm">
+              <div className="group">
                 <label htmlFor="email" className="label">Email</label>
-					<input value={email}id="email" type="email" className="input" onChange={(e)=>{setEmail(e.target.value)}}/>
-				</div>
-				<div className="group">
-					<label htmlFor="pass" className="label">Password</label>
-					<input value={password} id="pass" type="password" className="input" data-type="password" onChange={(e)=>{setPassword(e.target.value)}}/>
-				</div>
-				<div className="group">
+                <input value={email} id="email" type="email" className="input" onChange={(e) => { setEmail(e.target.value) }} />
+              </div>
+              <div className="group">
+                <label htmlFor="pass" className="label">Password</label>
+                <input value={password} id="pass" type="password" className="input" data-type="password" onChange={(e) => { setPassword(e.target.value) }} />
+              </div>
+              {/* <div className="group">
 					<input id="check" type="checkbox" className="check" defaultChecked />
 					<label htmlFor="check"><span className="icon"></span> Keep me Signed in</label>
-				</div>
-				<div className="group">
-					<button type="submit" onClick={HandleLogin} className="button" value="Sign In">
-                        sign in
+				</div> */}
+              <div className="group">
+                <button type="submit" onClick={HandleLogin} className="button" value="Sign In">
+                  sign in
                         </button>
-				</div>
-				<div className="hr"></div>
-				<div className="foot-lnk">
-					{/* <a href="#forgot">Forgot Password?</a> */}
-				</div>
-			</div>
-			<div className="sign-up-htm">
-            <div className="group">
-					<label htmlFor="pass" className="label">Admin Name</label>
-					<input value={name} id="email" type="text" className="input" onChange={(e)=>{setName(e.target.value)}}/>
-				</div>
-				<div className="group">
-					<label htmlFor="email" className="label">Email Adress</label>
-					<input value={email}id="email" type="email" className="input" onChange={(e)=>{setEmail(e.target.value)}}/>
-				</div>
-				<div className="group">
-					<label htmlFor="pass" className="label">Password</label>
-					<input value={password} id="pass" type="password" className="input" data-type="password" onChange={(e)=>{setPassword(e.target.value)}}/>
-				</div>
-				
-				
-				<div className="group">
+              </div>
+              <div className="hr"></div>
+              <div className="foot-lnk">
+              </div>
+            </div>
+            <div className="sign-up-htm">
+              <div className="group">
+                <label htmlFor="name" className="label">Admin Name</label>
+                <input value={name} id="email" type="text" className="input" onChange={(e) => { setName(e.target.value) }} />
+              </div>
+              <div className="group">
+                <label htmlFor="email" className="label">Email Adress</label>
+                <input value={email} id="email" type="email" className="input" onChange={(e) => { setEmail(e.target.value) }} />
+              </div>
+              <div className="group">
+                <label htmlFor="pass" className="label">Password</label>
+                <input value={password} id="pass" type="password" className="input" data-type="password" onChange={(e) => { setPassword(e.target.value) }} />
+              </div>
+              <div className="group">
+                <label htmlFor="location" className="label">location</label>
+                <input value={location} id="location" type="link" className="input" data-type="text" onChange={(e) => { setLocation(e.target.value) }} />
+              </div>
+              <div className="group">
+                <label htmlFor="website" className="label">Company Wbsite Link</label>
+                <input value={url} id="website" type="link" className="input" data-type="text" onChange={(e) => { setUrl(e.target.value) }} />
+              </div>
+
+
+              <div className="group">
+                <label htmlFor="tel" className="label">phone</label>
+                <input id="phone" value={phoneNumber} type="tel" className="input" onChange={(e) => setPhoneNumber(e.target.value)} />
+              </div>
+
+              <div className="group">
+                <label htmlFor="image" className="label">image</label>
+                <input id="image" type="file" className="input" data-type="file" onChange={(e) => setImage(e.target.files[0])} />
+              </div>
+
+              <div className="group">
                 <button type="submit" onClick={handleRegister} className="button" value="Sign Up">
-                        Sign Up
-                        </button>		
-                        		</div>
-				<div className="hr"></div>
-				<div className="foot-lnk">
-					<label htmlFor="tab-1">Already Member?</label>
-				</div>
-			</div>
-		</div> 
-	</div>
-</div>
-    )
+                  Sign Up
+                        </button>
+              </div>
+              <div className="hr"></div>
+              <div className="foot-lnk">
+                <label htmlFor="tab-1">Already Member?</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </>
+  )
 }
 
 export default Login

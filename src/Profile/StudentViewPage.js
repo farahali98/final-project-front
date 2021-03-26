@@ -25,22 +25,28 @@ function StudentViewPage() {
   useEffect(() => {
     const id = localStorage.getItem('id')
     setLoading(true)
-    
-    Axios.get(`http://localhost:8000/api/business/${id}`)
-      .then(
-        response => {
-          setName(response.data.business.name)
-          setEmail(response.data.business.email)
-          setPassword(response.data.business.password)
-          setLocation(response.data.business.location)
-          setImage(response.data.business.image)
-          setPhoneNumber(response.data.business.phone_number)
-          setUrl(response.data.business.url)
-        }
-      )
-    setLoading(false)
-  }, []);
+    if (id != null || !!id) {
+      Axios.get(`http://localhost:8000/api/business/${id}`)
+        .then(
+          response => {
+           console.log(response.data.business.name)
+             setName(response.data.business.name)
+            setEmail(response.data.business.email)
+            setPassword(response.data.business.password)
+            setLocation(response.data.business.location)
+            setImage(response.data.business.image)
+            setPhoneNumber(response.data.business.phone_number)
+           setUrl(response.data.business.url)
+          }
+        )
+      setLoading(false)
+    }
 
+  }, []);
+  const HandleLogout = () => {
+    localStorage.setItem('token', '')
+    localStorage.setItem('id', '')
+  }
   const updateInfo = () => {
     const id = localStorage.getItem('id')
     const data = new FormData();
@@ -73,7 +79,7 @@ function StudentViewPage() {
 
 
               <>
-               
+
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
@@ -203,31 +209,31 @@ function StudentViewPage() {
                 </Modal>
               </>
 
-             <div className="col-md-4 mb-3">
-								<div className="card">
-									<div className="card-body">
-										<div className="d-flex flex-column align-items-center text-center">
-											<img
-												src={"http://localhost:8000/storage/" + image}
-												alt="Student Profile Photo"
-												className="rounded-circle"
-												width={150}
-											/>
-											<div className="mt-3">
-												<h4>
-													{name}
-												</h4>
+              <div className="col-md-4 mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="d-flex flex-column align-items-center text-center">
+                      <img
+                        src={"http://localhost:8000/storage/" + image}
+                        alt="Student Profile Photo"
+                        className="rounded-circle"
+                        width={150}
+                      />
+                      <div className="mt-3">
+                        <h4>
+                          {name}
+                        </h4>
 
-                        <Button style={{marginBottom:'10%'}}variant="primary" onClick={handleShow}>
-                         edit      </Button>
+                        <Button style={{ marginBottom: '10%' }} variant="primary" onClick={handleShow}>
+                          edit      </Button>
 
-												{"   "}
-												<Button style={{marginBottom:'10%'}} variant="secondary">Logout</Button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> 
+                        {"   "}
+                        <Button onClick={HandleLogout} style={{ marginBottom: '10%' }} variant="secondary">Logout</Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="col-md-8">
                 <div className="card mb-3">
                   <div className="card-body">

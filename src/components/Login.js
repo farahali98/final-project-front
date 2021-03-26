@@ -97,16 +97,10 @@ const Login = () => {
           setToken(response.data.access_token)
           {
             response.data &&
-              response.data.access_token &&
-              localStorage.setItem("token", response.data.access_token);
+            response.data.access_token &&
+            localStorage.setItem("token", response.data.access_token);
             localStorage.setItem("id", response.data.user.id);
-            localStorage.setItem("email", response.data.user.email);
-            localStorage.setItem("password", response.data.user.password);
-            localStorage.setItem("location", response.data.user.location);
-            localStorage.setItem("phone_number", response.data.user.phone_number);
-            localStorage.setItem("url", response.data.user.url);
-            localStorage.setItem("image", response.data.user.image);
-            localStorage.setItem("name", response.data.user.name);
+           
           }
 
         })
@@ -116,9 +110,17 @@ const Login = () => {
 
     }
   }
-  if (token) return <Redirect exact to="/profile" />
 
 
+
+//   if (token) return <Redirect exact to="/profile" />
+
+// if (token){
+//   <Redirect exact to="/profile" />
+// }
+// else{
+//   <Redirect exact to="/"/>
+// }
   return (
     <>
           <Menu />

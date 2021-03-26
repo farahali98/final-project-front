@@ -1,6 +1,6 @@
 
 import { makeStyles } from '@material-ui/core/styles';
-import FooterPage from './FooterPage';
+// import FooterPage from './FooterPage';
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { BsSearch } from "react-icons/bs";
@@ -72,7 +72,7 @@ const FoodNumber=food.length;
             </div>
             </center>
             <SimpleMap/>
-            <FooterPage />
+            {/* <FooterPage /> */}
         </div>)
 }
 export default Food;

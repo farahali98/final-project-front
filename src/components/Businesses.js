@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import FooterPage from './FooterPage';
+// import FooterPage from './FooterPage';
 import CountUp from 'react-countup';
 import { Card } from 'react-bootstrap'
 import './Businesses.css'
@@ -81,7 +81,7 @@ const About = () => {
                 </div>
             })}
 </div>
-            <FooterPage />
+            {/* <FooterPage /> */}
         </div>
     )
 }

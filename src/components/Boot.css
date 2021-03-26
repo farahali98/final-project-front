@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
 	color: #333;
 	text-align: center;
 	text-transform: uppercase;
@@ -17,11 +17,11 @@ h1::after {
 	left: 0;
 	right: 0;
 	bottom: -10px;
-}
-.carousel {
+} */
+/* .carousel { */
 	/* width: 650px;
 	margin: 0 auto; */
-	padding-bottom: 50px;
+	/* padding-bottom: 50px;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -73,4 +73,4 @@ h1::after {
     text-shadow: none;
 	top: 4px;
 }
-
+ */

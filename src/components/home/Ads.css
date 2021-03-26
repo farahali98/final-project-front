@@ -1,4 +1,4 @@
-/* 
+
 .card {
     cursor: pointer
 }
@@ -41,4 +41,15 @@ button:focus {
     margin-top: 20px;
     padding-bottom: 15px
 }
- */
+ 
+@media only screen and (max-width: 700) {
+  
+    .row{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .card {
+        margin:10px;
+        width: 100px;
+    }
+}

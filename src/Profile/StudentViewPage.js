@@ -6,7 +6,7 @@ import StudentInfo from "./StudentInfo";
 import FoodCrud from './FoodCrud'
 import { LoadScript } from "@react-google-maps/api";
 import Axios from "axios";
-import FooterPage from '../components/FooterPage';
+// import FooterPage from '../components/FooterPage';
 function StudentViewPage() {
   // const [id, setId] = useState('');
   const [name, setName] = useState("");
@@ -247,7 +247,7 @@ function StudentViewPage() {
 
 
         <FoodCrud />
-        <FooterPage/>
+        {/* <FooterPage/> */}
       </>
     </>
   );

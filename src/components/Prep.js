@@ -1,5 +1,5 @@
 import React from 'react'
-import FooterPage from './FooterPage'
+// import FooterPage from './FooterPage'
 import {Button} from 'react-bootstrap'
 const Prep = () => {
     return (
@@ -23,7 +23,7 @@ const Prep = () => {
              <Button style={{marginLeft:'58px',backgroundColor:'#f04f47',borderColor:'transparent'}} href='/login'>Login</Button>
             </div>
         </div>
-        <FooterPage/>
+        {/* <FooterPage/> */}
         </div>
     )
 }

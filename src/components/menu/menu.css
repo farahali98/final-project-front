@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
 
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   div.menu-pane  {
     width: 70%;
     height: 40%;
@@ -9,7 +9,7 @@
   nav{
     padding-top:60%;
   }
-}
+} */
 
 .hamburger-icon {
   position: absolute;

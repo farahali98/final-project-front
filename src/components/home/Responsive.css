@@ -1,0 +1,7 @@
+@media only screen and (max-width: 700) {
+  
+    .row{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}

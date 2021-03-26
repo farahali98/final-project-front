@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
-import FooterPage from './FooterPage'
+// import FooterPage from './FooterPage'
 import TestimonialsPage from './TestimonialsPage'
 import { FaHamburger } from 'react-icons/fa'
 import CountUp from 'react-countup';
@@ -9,7 +9,7 @@ import { Box } from "@material-ui/core";
 import VisibilitySensor from "react-visibility-sensor";
 import BurgerLogo from './hamburger.svg'
 import Group from './Group'
-import Logos from './Logos'
+// import Logos from './home/Logos'
 import Boot from './Boot'
 import Menu from './menu/Menu'
 const Home = () => {
@@ -23,14 +23,14 @@ const Home = () => {
                     <div className="container-fluid" style={{ position: 'absolute', paddingTop: '14%' }}>
                         <div className="row" style={{ textAlign: 'center', display: 'block' }}>
                             <div>
-                                <Card style={{height:'300px',width:'500px',backgroundColor:'white',opacity:'0.7'}}>
-                               <Card.Body style={{paddingTop:'20%'}}><h5>Hello, world! Full width Hero-unit header</h5>
-                                <p style={{ fontStyle: 'italic',letterSpacing: '1px', fontWeight: '300' }} >
-                                    hello this is a dummy text to test stuff.
+                                <Card style={{ height: '300px', width: '500px', backgroundColor: 'white', opacity: '0.7' }}>
+                                    <Card.Body style={{ paddingTop: '20%' }}><h5>Hello, world! Full width Hero-unit header</h5>
+                                        <p style={{ fontStyle: 'italic', letterSpacing: '1px', fontWeight: '300' }} >
+                                            hello this is a dummy text to test stuff.
                                 </p>
-                                <Button  href="#About" variant="outline-dark">Learn more »</Button>
-                                
-                                </Card.Body> 
+                                        <Button href="#About" variant="outline-dark">Learn more »</Button>
+
+                                    </Card.Body>
                                 </Card>
                             </div>
 
@@ -46,7 +46,7 @@ const Home = () => {
             <section >
                 <div className="home-page" style={{ paddingRight: '5%', paddingLeft: '5%', textAlign: 'center', letterSpacing: '1px', fontWeight: '300' }} className="parallex" id="About">
                     <h1 >About us</h1>
-                    <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', paddingTop:'5%' }}>
+                    <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', paddingTop: '5%' }}>
                         In publishing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
@@ -56,33 +56,33 @@ const Home = () => {
                         <div className='reasons' style={{ display: 'flex', columnGap: '15%', paddingBottom: '50px' }}>
                             <div className="icons">
                                 <img style={{ height: '40%', width: '15%' }} src={BurgerLogo} />
-                                <p style={{ 	color: '#A9A9A9'}}>by donating you will be preventing a big problem which is food waste</p>
+                                <p style={{ color: '#A9A9A9' }}>by donating you will be preventing a big problem which is food waste</p>
 
 
                             </div>
                             <div className="icons">
                                 <img style={{ height: '40%', width: '15%' }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0KX8uujg1eggv3D1qjZ8qnssUl1gAdfc_Q&usqp=CAU' />
-                                <p style={{ 	color: '#A9A9A9'}}>by donating you will be preventing a big problem which is food waste</p>
+                                <p style={{ color: '#A9A9A9' }}>by donating you will be preventing a big problem which is food waste</p>
 
 
                             </div>
                             <div className="icons">
-                                <img style={{height: '40%', width: '15%' }} src={BurgerLogo}/>
+                                <img style={{ height: '40%', width: '15%' }} src={BurgerLogo} />
                                 <title>Food</title>
-                                <p style={{ 	color: '#A9A9A9'}}>by donating you will be preventing a big problem which is food waste</p>
+                                <p style={{ color: '#A9A9A9' }}>by donating you will be preventing a big problem which is food waste</p>
 
 
                             </div>
-                        </div> 
+                        </div>
 
-                 </div>
+                    </div>
 
                 </div>
 
 
                 <h1>Why work with us?</h1>
-                <Logos/>
-                <Card style={{ height: "304px",backgroundColor: '#f04f47',color: 'white' }}>
+                {/* <Logos /> */}
+                <Card style={{ height: "304px", backgroundColor: '#f04f47', color: 'white' }}>
                     <Card.Body style={{ display: 'flex', columnGap: '17%', fontSize: '2rem', justifyContent: 'center', marginTop: '8%' }}>
                         <div className='counter' style={{ display: 'flex', columnGap: '10%' }}>
 
@@ -161,33 +161,33 @@ const Home = () => {
                 </Card>
 
                 <div className="rotation" style={{ display: 'flex', columnGap: '5%' }}>
-      <div class="flip-container">
-        <div class="flip-this">
+                    <div class="flip-container">
+                        <div class="flip-this">
 
-          <img alt="Godot icon" src="https://images.unsplash.com/photo-1571039904131-0239647d05f5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aHVuZ2VyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          <div class="centered">
-            <h5> Donate</h5>
-            <p> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also </p></div>
+                            <img alt="Godot icon" src="https://images.unsplash.com/photo-1571039904131-0239647d05f5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aHVuZ2VyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+                            <div class="centered">
+                                <h5> Donate</h5>
+                                <p> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also </p></div>
 
-        </div>
-      </div>
+                        </div>
+                    </div>
 
 
 
-      <div class="flip-container">
-        <div class="flip-this">
+                    <div class="flip-container">
+                        <div class="flip-this">
 
-        
-          <img alt="Godot icon" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9uYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-          <div class="centered">
-            <h5>Do good</h5>
-            <p>Lorem Ipsu It has survived not only five centuries, but also </p></div>
 
-        </div>
-      </div>
-    </div>
+                            <img alt="Godot icon" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9uYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+                            <div class="centered">
+                                <h5>Do good</h5>
+                                <p>Lorem Ipsu It has survived not only five centuries, but also </p></div>
 
-                <Boot/>
+                        </div>
+                    </div>
+                </div>
+
+                <Boot />
 
 
                 {/* <h2 className="page-title" style={{textAlign:'center'}}>Testimonials</h2>
@@ -207,15 +207,15 @@ const Home = () => {
 
 
                 </div>
-             
+
 
 
 
 
             </section>
-{/* <h2 className="page-title"> Our Team</h2>
+            {/* <h2 className="page-title"> Our Team</h2>
 <Group/> */}
-            <FooterPage />
+            {/* <FooterPage /> */}
         </div>
     )
 }

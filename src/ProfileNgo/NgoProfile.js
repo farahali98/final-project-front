@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Card, Form, Col } from "react-bootstrap";
-import FoodCrud from "./FoodCrud";
 import { LoadScript } from "@react-google-maps/api";
 import Axios from "axios";
-// import FooterPage from '../components/FooterPage';
-function StudentViewPage() {
+function NgoProfile() {
   // const [id, setId] = useState('');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,22 +16,22 @@ function StudentViewPage() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [loading, setLoading] = useState(false);
-  const [business, setBusiness] = useState([]);
+//   const [ngo, setngo] = useState([]);
 
  
   useEffect(() => {
     const id = localStorage.getItem("id");
     setLoading(true);
     if (id != null || !!id) {
-      Axios.get(`http://localhost:8000/api/business/${id}`).then((response) => {
-        console.log(response.data.business.name);
-        setName(response.data.business.name);
-        setEmail(response.data.business.email);
-        setPassword(response.data.business.password);
-        setLocation(response.data.business.location);
-        setImage(response.data.business.image);
-        setPhoneNumber(response.data.business.phone_number);
-        setUrl(response.data.business.url);
+      Axios.get(`http://localhost:8000/api/ngo/${id}`).then((response) => {
+        console.log(response.data.ngo.name);
+        setName(response.data.ngo.name);
+        setEmail(response.data.ngo.email);
+        setPassword(response.data.ngo.password);
+        setLocation(response.data.ngo.location);
+        setImage(response.data.ngo.image);
+        setPhoneNumber(response.data.ngo.phone_number);
+        setUrl(response.data.ngo.url);
       });
       setLoading(false);
     }
@@ -43,7 +41,7 @@ function StudentViewPage() {
     // data.append("password", password);
     // try {
     //   console.log('testtts')
-    //   Axios.post('http://localhost:8000/api/business/logout',
+    //   Axios.post('http://localhost:8000/api/ngo/logout',
     //    headers: {
     //   'content-type': 'multipart/form-data',
     //   'Authorization': "Bearer " + localStorage.getItem('token')
@@ -63,7 +61,7 @@ function StudentViewPage() {
     try {
       console.log("testtts");
       Axios.post(
-        `http://localhost:8000/api/business/${id}?_method=PUT `,
+        `http://localhost:8000/api/ngo/${id}?_method=PUT `,
         data,
         {
           headers: {
@@ -193,9 +191,9 @@ function StudentViewPage() {
 							Submit form
 						</Button>
 					</Form>
-        <FoodCrud />
+      
         </>
   );
 }
 
-export default StudentViewPage;
+export default NgoProfile;

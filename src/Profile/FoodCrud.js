@@ -214,7 +214,7 @@ const FoodCrud = () => {
               }}
               type="button"
             >
-                        Submit form
+          Submit donation
         </Button>      
         </Form>
         </Modal.Body>
@@ -227,7 +227,7 @@ const FoodCrud = () => {
 
 
         <Container style={{ marginTop: '100px' }}>
-            <Button variant="secondary" style={{ float: 'right', margin: '20px' }} onClick={handleDisplay}>Add Donation</Button>
+            <Button style={{ backgroundColor:'gray',borderColor:'gray', width:'10%',float: 'right', margin: '20px' }} onClick={handleDisplay}>Donate</Button>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -248,7 +248,9 @@ const FoodCrud = () => {
                             <td>{food.type}</td>
                             <td>{food.cooked_at}</td>
                             <td><img style={{height:'100px'}} src={"http://localhost:8000/storage/" + food.image} /></td>
-                            <td><Button onClick={handleShow}>Update</Button> <Button onClick={handleDelete} variant="danger">Delete</Button></td>
+                            <td><Button  style={{backgroundColor:'#eed202',borderColor:'#eed202',paddingBottom:'10px'}} onClick={handleShow}>Update</Button>
+                            <br/>
+                             <Button style={{backgroundColor:'red',borderColor:'red'}} onClick={handleDelete}>Delete</Button></td>
                         </tr>
                     }
                     )

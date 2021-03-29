@@ -102,7 +102,7 @@ const Profile = () => {
           })}
         </ul>
         <center>
-        <button
+        <Button
           className="join"
           style={{
             margin: "30px",
@@ -112,9 +112,11 @@ const Profile = () => {
             color: "white",
             borderColor: "black",
           }}
+          href="login/business"
+
         >
           join us
-        </button>
+        </Button>
         </center>
 
         <h1 style={{backgroundColor:'black',color:'white',padding:'15px'}}>Non-Profit Organizations</h1>
@@ -156,7 +158,7 @@ const Profile = () => {
           })}
         </ul>
         <center>
-        <button
+        <Button
           className="join"
           style={{
             margin: "30px",
@@ -166,9 +168,10 @@ const Profile = () => {
             color: "white",
             borderColor: "black",
           }}
+          href="login/ngo"
         >
           join us
-        </button>
+        </Button>
         </center>
       </div>
       <FooterPage />

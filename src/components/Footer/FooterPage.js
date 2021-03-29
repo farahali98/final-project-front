@@ -16,8 +16,9 @@ const FooterPage = () => {
             	<div className="col-md-6">
                     <ul className="pages">
                         <li><a href="/home">Home</a></li>
-                        <li><a href="/ngos">NGOs</a></li>
-                        <li><a href="/business">Businesses</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/contributors">contributors</a></li>
+
                         
                     </ul>
                 </div>

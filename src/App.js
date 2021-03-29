@@ -44,6 +44,10 @@ function App() {
           {/* <Route exact path='/map' component={SimpleMap}>
           <SimpleMap/> */}
           </Route>
+          <Route exact path='/food' component={FoodList}>
+            <FoodList/>
+            <Router/>
+          </Route>
       </Switch>
     </BrowserRouter>
     

@@ -59,7 +59,7 @@ const Counter = () => {
             </div>
             <div className='counter' style={{ display: 'flex', columnGap: '10%' }}>
 
-                <CountUp start={focus ? 0 : null} end={100} duration={5} redraw={true}>
+                <CountUp start={focus ? 0 : null} end={70} duration={5} redraw={true}>
                     {({ countUpRef }) => (
                         <div>
                             <span ref={countUpRef} />
@@ -76,8 +76,8 @@ const Counter = () => {
                     )}
                 </CountUp>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <h4>happy</h4>
-                    <h4 style={{ fontWeight: '800' }}>Families</h4>
+                    <h4>delivered</h4>
+                    <h4 style={{ fontWeight: '800' }}>Donations</h4>
                 </div>
 
             </div>

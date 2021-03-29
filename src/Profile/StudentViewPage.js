@@ -3,6 +3,8 @@ import { Button, Modal, Card, Form, Col } from "react-bootstrap";
 import FoodCrud from "./FoodCrud";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import HeaderMenu from "../components/header/HeaderMenu";
+import FooterPage from "../components/Footer/FooterPage";
 function StudentViewPage() {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -25,7 +27,7 @@ function StudentViewPage() {
 		console.log(localStorage.getItem('id'))
 		if (id != null || !!id) {
 			Axios.get(`http://localhost:8000/api/business/${id}`).then((response) => {
-				console.log(response.data);
+				// console.log(response.data);
 				setName(response.data.business.name);
 				setEmail(response.data.business.email);
 				setPassword(response.data.business.password);
@@ -81,16 +83,17 @@ function StudentViewPage() {
 
 	return (
 		<>
+		{/* <HeaderMenu/> */}
 			<div style={{ padding: '1%' }}>
 				<center>
 
-					<h2 style={{ backgroundColor: 'black', color: 'white' }}>BUSINESS PRIVATE PROFILE</h2>
+					<h2 style={{ backgroundColor: 'black', color: 'white' }}>WELCOME TO YOUR PRIVATE BUSINESS PRIVATE PROFILE</h2>
 					<br />
 
 					<img
 						style={{ height: "200px" }}
-						src="https://i.pinimg.com/originals/1a/a3/13/1aa3137efb23ef4531c45c4f0c40abf8.jpg"
-					/>
+						src={"http://localhost:8000/storage/" + image} />
+			
 					<h3 >{name}</h3>
 					<Button style={{ width: '10%', backgroundColor: 'red', borderColor: 'black' }} onClick={logout}>logout</Button>
 
@@ -134,7 +137,7 @@ function StudentViewPage() {
 							name="location"
 							type="link"
 							name="location"
-							defaultValue={Location}
+							defaultValue={location}
 							// error={!!errors.firstName}
 							// helperText={errors?.firstName?.message}
 							onChange={(e) => setLocation(e.target.value)}
@@ -179,7 +182,7 @@ function StudentViewPage() {
 						<Form.Label>image</Form.Label>
 						<Form.Control
 							type="file"
-							name="password"
+							name="image"
 							onChange={(e) => setImage(e.target.files[0])}
 
 
@@ -201,6 +204,7 @@ function StudentViewPage() {
 			</Form>
 
 			<FoodCrud />
+			<FooterPage/>
 		</>
 	);
 }

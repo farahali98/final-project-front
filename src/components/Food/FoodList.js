@@ -4,7 +4,7 @@ import './FoodList.css';
 import './Search.css'
 import SimpleMap from "../../map/SimpleMap";
 import FooterPage from "../Footer/FooterPage";
-import { Menu } from "@material-ui/core";
+import {Link} from 'react-router-dom';
 const FoodList = () => {
   const [ngo,setNgo]=useState([])
   const [food,setFood]=useState([]);
@@ -30,9 +30,9 @@ const FoodNumber=food.length;
   
     return (
       <>
-                  <Menu/>
 
-      <center>
+      <center style={{paddingBottom:'5%'}}>
+        <Link to="/profile/ngo" style={{ display:'flex',color:'gray',fontWeight:'400px',fontSize:'1.5rem'}}> Back To Profile</Link>
       {/* <div className="flexbox" > */}
           <div className="search">
             <h1>Search for a donation</h1>
@@ -63,7 +63,9 @@ const FoodNumber=food.length;
   </div>
   </center>
   {/* <SimpleMap/> */}
-  <FooterPage/>
+  <div style={{paddingTop:'15%',backgroundColor:'black'}}>
+<FooterPage/>
+</div>
   </>
     );
   };

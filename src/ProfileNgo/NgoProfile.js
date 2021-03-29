@@ -4,7 +4,7 @@ import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import FooterPage from "../components/Footer/FooterPage";
 import HeaderMenu from "../components/header/HeaderMenu";
-
+import {Link} from 'react-router-dom'
 function NgoProfile() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,6 +18,7 @@ function NgoProfile() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [loading, setLoading] = useState(false);
+   
   let history = useHistory();
 
   useEffect(() => {
@@ -76,15 +77,18 @@ function NgoProfile() {
   };
   return (
     <>
-	<HeaderMenu/>
+	{/* <HeaderMenu/> */}
       <div style={{padding:'1%'}}>
+	  <Link  to="/food"style={{color:'gray',fontWeight:'400px',fontSize:'1.5rem'}}>Food Donations</Link>
+
        <center>
+
 
 	   <h2 style={{backgroundColor:'black',color:'white'}}>NGO PRIVATE PROFILE</h2>
 <br/>
       <img
         style={{ height: "200px" }}
-        src="https://i.pinimg.com/originals/1a/a3/13/1aa3137efb23ef4531c45c4f0c40abf8.jpg"
+        src={"http://localhost:8000/storage/" + image} 
       />
 	        <h3 >{name}</h3>
 			<Button  style={{width:'10%',backgroundColor:'red',borderColor:'black'}} onClick={logout}>logout</Button>

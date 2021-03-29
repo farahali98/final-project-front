@@ -117,7 +117,7 @@ const Login = () => {
 
   // if (token) return <Redirect exact to="/" />
 
-if (token) return  <Redirect exact to="/profile" />
+if (token) return  <Redirect exact to="/profile/business" />
 
 
 // else{

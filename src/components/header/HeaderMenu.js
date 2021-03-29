@@ -9,11 +9,11 @@ const HeaderMenu = () => {
             <Navbar.Brand href="/" className='menutext'>Foodzie</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto" style={{ paddingLeft: '70%'}}>
+                <Nav className="mr-auto" style={{ paddingLeft: '80%'}}>
                     {/* <Nav.Link style={{fontFamily:'QuikSans'}} href="/food" className='menutext'>Food</Nav.Link> */}
-                    <Nav.Link href="/hello" className='menutext'>Contributors</Nav.Link>
+                    <Nav.Link href="/contributors" className='menutext'>Contributors</Nav.Link>
                     <Nav.Link href="/login" className='menutext'>Login</Nav.Link>
-                    <Nav.Link href="" className='menutext'>NGOs</Nav.Link>
+                    {/* <Nav.Link href="" className='menutext'>NGOs</Nav.Link> */}
 
                
                 </Nav>

@@ -12,18 +12,18 @@ const First = () => {
     return (
         <div>
             <section className="bgimage parallex">
-            {/* <HeaderMenu/> */}
-<Menu/>
+            <HeaderMenu/>
+{/* <Menu/> */}
                 <div className='parallex'>
                     <div className="container-fluid" style={{ position: 'absolute', paddingTop: '14%' }}>
-                        <div className="row" style={{ textAlign: 'center', display: 'block', paddingLeft: '30%' }}>
+                        <div className="row" style={{ textAlign: 'center', display: 'block', paddingLeft: '35%' }}>
                             <div>
                                 <Card style={{ height: '300px', width: '500px', backgroundColor: 'white', opacity: '0.7' }}>
                                     <Card.Body style={{ paddingTop: '20%' }}><h5>Hello, world! Full width Hero-unit header</h5>
                                         <p style={{ letterSpacing: '1px', fontWeight: '300' }} >
                                             hello this is a dummy text to test stuff.
                                 </p>
-                                        <Button href="#About" variant="outline-dark">Learn more »</Button>
+                                        <Button style={{backgroundColor:'black'}} href="#About" variant="outline-dark">Learn more »</Button>
 
                                     </Card.Body>
                                 </Card>

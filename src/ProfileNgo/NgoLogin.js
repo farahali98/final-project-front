@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Router, Link, Route, Redirect } from 'react-router-dom'
 import Axios from 'axios';
+import HeaderMenu from '../components/header/HeaderMenu';
 // import Menu from './menu/Menu'
 
 const NgoLogin = () => {
@@ -116,7 +117,7 @@ const NgoLogin = () => {
 // }
   return (
     <>
-          {/* <Menu /> */}
+          <HeaderMenu />
 
     <div>
       <h2 style={{textAlign:'center',paddingTop:'5%'}}>LOGIN AS A NON PROFIT ACCOUNT</h2>

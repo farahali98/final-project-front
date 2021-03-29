@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Router, Link, Route, Redirect } from 'react-router-dom'
 import Axios from 'axios';
 import Menu from './menu/Menu'
+import HeaderMenu from './header/HeaderMenu';
 const Login = () => {
 
   const [email, setEmail] = useState('');
@@ -124,7 +125,7 @@ if (token) return  <Redirect exact to="/profile" />
 // }
  return (
     <>
-          <Menu />
+          <HeaderMenu />
 
     <div style={{paddingTop:'5%'}}>
     <center><h2>LOGIN AS A BUSINESS ACCOUNT</h2> </center> 

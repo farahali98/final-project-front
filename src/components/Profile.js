@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Profile.css";
 import Axios from "axios";
 import FooterPage from "./Footer/FooterPage";
-import { Menu } from "@material-ui/core";
 import { Button } from "react-bootstrap";
+import HeaderMenu from './header/HeaderMenu'
 import Ads from "./home/Ads";
 const Profile = () => {
   const [ngo, setNgo] = useState([]);
@@ -45,6 +45,8 @@ const Profile = () => {
   }, [searchNgo, business]);
   return (
     <>
+              <HeaderMenu/>
+
       <div className="main">
         <h1 style={{ paddingTop:'5%' }}>Get to know our Donators</h1>
         <p style={{}}>
@@ -69,7 +71,7 @@ const Profile = () => {
                 onChange={(e) => {
                   setSearch(e.target.value);
                 }}
-                placeholder="Search . . ."
+                placeholder="Search Business Accounts . ."
                 required
               />
             </div>
@@ -77,7 +79,7 @@ const Profile = () => {
         </center>
         {/* =</div> */}
         <ul className="inds">
-        {(filteredBusiness.length == 0) ? <div style={{ textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
+        {(filteredBusiness.length == 0) ? <div style={{ justifyContent:'center', textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
         filteredBusiness.map((business) => {
             return (
               <li className="inds_item">
@@ -99,6 +101,7 @@ const Profile = () => {
             );
           })}
         </ul>
+        <center>
         <button
           className="join"
           style={{
@@ -112,6 +115,7 @@ const Profile = () => {
         >
           join us
         </button>
+        </center>
 
         <h1 style={{backgroundColor:'black',color:'white',padding:'15px'}}>Non-Profit Organizations</h1>
         <center>
@@ -124,14 +128,14 @@ const Profile = () => {
                 onChange={(e) => {
                   setSearchNgo(e.target.value);
                 }}
-                placeholder="Search . . ."
+                placeholder="Search Non Profit. . ."
                 required
               />
             </div>
           </div>
         </center>
         <ul className="inds">
-        {(filteredNgo.length == 0) ? <div style={{ textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
+        {(filteredNgo.length == 0) ? <div style={{justifyContent:'center', textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
         filteredNgo.map((ngo) => {            return (
               <li className="inds_item">
                 <div className="ind">
@@ -151,6 +155,7 @@ const Profile = () => {
             );
           })}
         </ul>
+        <center>
         <button
           className="join"
           style={{
@@ -164,6 +169,7 @@ const Profile = () => {
         >
           join us
         </button>
+        </center>
       </div>
       <FooterPage />
     </>

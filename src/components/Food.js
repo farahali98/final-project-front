@@ -59,7 +59,7 @@ const FoodNumber=food.length;
             <h2>Food ({FoodNumber})</h2>
             <center>
             <div className="food">
-                {(filteredData.length == 0) ? <div>no result</div> :
+                {(filteredData.length == 0) ? <center><div>no results found</div> </center> :
                     filteredData.map((food) => {
                         return <div key={food.id} style={{ width: '200px' }}>
                             <img src={"http://localhost:8000/storage/" + food.image}/>

@@ -5,24 +5,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const HeaderMenu = () => {
     return (
-        <Navbar bg="transparent" expand="lg">
-            <Navbar.Brand href="/" className='menutext'>Food Website</Navbar.Brand>
+        <Navbar style={{backgroundColor:'black'}} expand="lg">
+            <Navbar.Brand href="/" className='menutext'>Foodzie</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto" style={{ paddingLeft: '50%' }}>
-                    <Nav.Link href="/food" className='menutext'>Food Crud</Nav.Link>
-                    <Nav.Link href="/ngos" className='menutext'>NGOs</Nav.Link>
+                <Nav className="mr-auto" style={{ paddingLeft: '70%'}}>
+                    {/* <Nav.Link style={{fontFamily:'QuikSans'}} href="/food" className='menutext'>Food</Nav.Link> */}
+                    <Nav.Link href="/hello" className='menutext'>Contributors</Nav.Link>
                     <Nav.Link href="/login" className='menutext'>Login</Nav.Link>
-                    <Nav.Link href="/ngos" className='menutext'>NGOs</Nav.Link>
+                    <Nav.Link href="" className='menutext'>NGOs</Nav.Link>
 
-                    {/* <NavDropdown title="Donations" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/food" className='menutext'>Food</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.2" className='menutext'>Clothe</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.3" className='menutext'>Appliances</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                    </NavDropdown> */}
+               
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

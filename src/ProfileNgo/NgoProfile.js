@@ -3,6 +3,7 @@ import { Button, Modal, Card, Form, Col } from "react-bootstrap";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import FooterPage from "../components/Footer/FooterPage";
+import HeaderMenu from "../components/header/HeaderMenu";
 
 function NgoProfile() {
   const [name, setName] = useState("");
@@ -75,6 +76,7 @@ function NgoProfile() {
   };
   return (
     <>
+	<HeaderMenu/>
       <div style={{padding:'1%'}}>
        <center>
 

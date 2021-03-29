@@ -8,7 +8,7 @@ const Sidebar=() => {
     <Navbar.Brand href="/" className='menutext'>Food Website</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto" style={{paddingLeft:'50%'}}>
+      <Nav className="mr-auto" style={{paddingLeft:'70%'}}>
         <Nav.Link href="/businesses" className='menutext'>Businesses</Nav.Link>
         <Nav.Link href="/ngos" className='menutext'>NGOs</Nav.Link>
         <Nav.Link href="/login" className='menutext'>Login</Nav.Link>

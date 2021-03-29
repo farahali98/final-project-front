@@ -23,26 +23,26 @@ function App() {
         <Route exact path='/food' component={FoodList}>
           <FoodList/>
           </Route>
-          <Route exact path='/login' component={Login}>
+          <Route exact path='/login/business' component={Login}>
           <Login />
           </Route>  
-           <Route exact path='/profile' component={StudentViewPage}>
+           <Route exact path='/profile/business' component={StudentViewPage}>
           <StudentViewPage />
           </Route>
-          <Route exact path='/hello' component={Profile}>
+          <Route exact path='/contributors' component={Profile}>
           <Profile/>
           </Route>
-          <Route exact path='/profile/login' component={NgoLogin}>
+          <Route exact path='/login/ngo' component={NgoLogin}>
           <NgoLogin/>
           </Route>
           <Route exact path='/profile/ngo' component={NgoProfile}>
           <NgoProfile/>
           </Route>
-          <Route exact path='/prep' component={Prep}>
+          <Route exact path='/login' component={Prep}>
           <Prep/>
-          </Route>
-          <Route exact path='/map' component={SimpleMap}>
-          <SimpleMap/>
+          {/* </Route> */}
+          {/* <Route exact path='/map' component={SimpleMap}>
+          <SimpleMap/> */}
           </Route>
       </Switch>
     </BrowserRouter>

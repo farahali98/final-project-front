@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Card, Form, Col } from "react-bootstrap";
 import FoodCrud from "./FoodCrud";
-import { LoadScript } from "@react-google-maps/api";
 import Axios from "axios";
-// import FooterPage from '../components/FooterPage';
+import { useHistory } from "react-router-dom";
 function StudentViewPage() {
-  // const [id, setId] = useState('');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,14 +17,14 @@ function StudentViewPage() {
   const handleShow = () => setShow(true);
   const [loading, setLoading] = useState(false);
   const [business, setBusiness] = useState([]);
-
+  const [food,setFood]=useState([]);
  
   useEffect(() => {
     const id = localStorage.getItem("id");
     setLoading(true);
     if (id != null || !!id) {
       Axios.get(`http://localhost:8000/api/business/${id}`).then((response) => {
-        console.log(response.data.business.name);
+        // console.log(response.data.business.name);
         setName(response.data.business.name);
         setEmail(response.data.business.email);
         setPassword(response.data.business.password);
@@ -34,22 +32,13 @@ function StudentViewPage() {
         setImage(response.data.business.image);
         setPhoneNumber(response.data.business.phone_number);
         setUrl(response.data.business.url);
+		setFood(response.data.business.food)
+
       });
       setLoading(false);
     }
   }, []);
-  const HandleLogout = () => {
-    // data.append("email", email);
-    // data.append("password", password);
-    // try {
-    //   console.log('testtts')
-    //   Axios.post('http://localhost:8000/api/business/logout',
-    //    headers: {
-    //   'content-type': 'multipart/form-data',
-    //   'Authorization': "Bearer " + localStorage.getItem('token')
-    // })
-    // }
-  };
+ 
   const updateInfo = () => {
     const id = localStorage.getItem("id");
     const data = new FormData();
@@ -78,6 +67,17 @@ function StudentViewPage() {
       console.log(err);
     }
   };
+  let history = useHistory();
+
+
+
+  const logout = () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("id");
+      history.push("/");
+      window.location.reload(true);
+  };
+
   return (
     <>
       <div style={{paddingTop:'10px'}}>
@@ -85,13 +85,13 @@ function StudentViewPage() {
        
       <img
         style={{ height: "200px" }}
-        src="https://i.pinimg.com/originals/1a/a3/13/1aa3137efb23ef4531c45c4f0c40abf8.jpg"
-      />
+		 src={"http://localhost:8000/storage/" + image} />
+		
 
       <h3 >{name}</h3>
      
     </div>
-
+    <Button onClick={logout}>logout</Button>
 
 
     <Form>
@@ -117,7 +117,6 @@ function StudentViewPage() {
 									name="url"
 									defaultValue={url}
 									onChange={(e) => setUrl(e.target.value)}
-								
 								/>
 								<Form.Control.Feedback type="invalid" tooltip>
 								</Form.Control.Feedback>
@@ -193,6 +192,7 @@ function StudentViewPage() {
 							Submit form
 						</Button>
 					</Form>
+					
         <FoodCrud />
         </>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Card, Button } from 'react-bootstrap'
-// import Menu from '../menu/Menu'
-
+import Menu from '../menu/Menu'
 import About from './About'
 import Counter from './Counter'
 import Flip from './Flip'
@@ -13,8 +12,8 @@ const First = () => {
     return (
         <div>
             <section className="bgimage parallex">
-            <HeaderMenu/>
-
+            {/* <HeaderMenu/> */}
+<Menu/>
                 <div className='parallex'>
                     <div className="container-fluid" style={{ position: 'absolute', paddingTop: '14%' }}>
                         <div className="row" style={{ textAlign: 'center', display: 'block', paddingLeft: '30%' }}>
@@ -38,7 +37,7 @@ const First = () => {
 
             <div className="home-page" style={{ paddingBottom: '5%', paddingRight: '5%', paddingLeft: '5%', textAlign: 'center', letterSpacing: '1px', fontWeight: '300', backgroundColor: '#eeee' }} className="parallex" id="About">
                 <h1 style={{ paddingTop: '5%' }} >About us</h1>
-                <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', fontFamily: 'DM Sans, sans-serif', fontSize: '1rem', paddingTop: '5%' }}>
+                <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', fontFamily: 'Quicksand, serif', fontSize: '1.1rem', fontWeight:'300',paddingTop: '5%',lineHeight:'26px' }}>
                     In publishing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
@@ -48,7 +47,7 @@ const First = () => {
             </div>
             <Counter />
             <Ads />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <FooterPage />
 
         </div>

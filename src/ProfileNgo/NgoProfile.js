@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button, Modal, Card, Form, Col } from "react-bootstrap";
-import { LoadScript } from "@react-google-maps/api";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
+
 function NgoProfile() {
-  // const [id, setId] = useState('');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,11 +16,11 @@ function NgoProfile() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [loading, setLoading] = useState(false);
-//   const [ngo, setngo] = useState([]);
+  let history = useHistory();
 
- 
   useEffect(() => {
     const id = localStorage.getItem("id");
+    console.log(id)
     setLoading(true);
     if (id != null || !!id) {
       Axios.get(`http://localhost:8000/api/ngo/${id}`).then((response) => {
@@ -36,18 +36,15 @@ function NgoProfile() {
       setLoading(false);
     }
   }, []);
-  const HandleLogout = () => {
-    // data.append("email", email);
-    // data.append("password", password);
-    // try {
-    //   console.log('testtts')
-    //   Axios.post('http://localhost:8000/api/ngo/logout',
-    //    headers: {
-    //   'content-type': 'multipart/form-data',
-    //   'Authorization': "Bearer " + localStorage.getItem('token')
-    // })
-    // }
-  };
+
+
+  const logout = () => {
+	localStorage.removeItem("token");
+	localStorage.removeItem("id");
+	history.push("/");
+	window.location.reload(true);
+};
+
   const updateInfo = () => {
     const id = localStorage.getItem("id");
     const data = new FormData();
@@ -70,7 +67,6 @@ function NgoProfile() {
           },
         }
       ).then((response) => {
-        // console.log(response);
       });
     } catch (err) {
       console.log(err);
@@ -78,7 +74,7 @@ function NgoProfile() {
   };
   return (
     <>
-      <div style={{paddingTop:'10px'}}>
+      <div style={{padding:'10px'}}>
        
        
       <img
@@ -89,8 +85,7 @@ function NgoProfile() {
       <h3 >{name}</h3>
      
     </div>
-
-
+	<Button onClick={logout}>logout</Button>
 
     <Form>
 						<Form.Row>
@@ -126,7 +121,7 @@ function NgoProfile() {
 									name="location"
 									type="link"
 									name="location"
-									defaultValue={Location}
+									defaultValue={location}
 									// error={!!errors.firstName}
 									// helperText={errors?.firstName?.message}
 									onChange={(e) => setLocation(e.target.value)}
@@ -160,8 +155,6 @@ function NgoProfile() {
 									name="password"
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
-
-							
 								/>
 
 								<Form.Control.Feedback type="invalid" tooltip>
@@ -191,7 +184,6 @@ function NgoProfile() {
 							Submit form
 						</Button>
 					</Form>
-      
         </>
   );
 }

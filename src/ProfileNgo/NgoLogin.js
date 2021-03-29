@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Router, Link, Route, Redirect } from 'react-router-dom'
 import Axios from 'axios';
-import Menu from './menu/Menu'
-const Login = () => {
+// import Menu from './menu/Menu'
 
-  const [email, setEmail] = useState('');
+const NgoLogin = () => {
+    const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState('');
   const [authErr, setAuthErr] = useState('');
@@ -45,7 +45,7 @@ const Login = () => {
       setAuthErr('');
     } else {
       try {
-        await Axios.post("http://localhost:8000/api/business/login", {
+        await Axios.post("http://localhost:8000/api/ngo/login", {
           email: email,
           password: password,
 
@@ -59,13 +59,6 @@ const Login = () => {
             response.data.access_token &&
             localStorage.setItem("token", response.data.access_token);
             localStorage.setItem("id", response.data.user.id);
-            localStorage.setItem("email", response.data.user.email);
-            localStorage.setItem("password", response.data.user.password);
-            localStorage.setItem("location", response.data.user.location);
-            localStorage.setItem("phone_number", response.data.user.phone_number);
-            localStorage.setItem("url", response.data.user.url);
-            localStorage.setItem("image", response.data.user.image);
-            localStorage.setItem("name", response.data.user.name);
           }
         });
       } catch (err) { console.log(err) };
@@ -76,7 +69,7 @@ const Login = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const link = "http://127.0.0.1:8000/api/business/register";
+      const link = "http://127.0.0.1:8000/api/ngo/register";
       const body = new FormData();
       body.append("name", name);
       body.append("email", email);
@@ -113,7 +106,7 @@ const Login = () => {
 
 
 
-  if (token) return <Redirect exact to="/" />
+  if (token) return <Redirect exact to="/profile/ngo" />
 
 // if (token){
 //   <Redirect exact to="/profile" />
@@ -123,10 +116,10 @@ const Login = () => {
 // }
   return (
     <>
-          <Menu />
+          {/* <Menu /> */}
 
-    <div style={{paddingTop:'10%'}}>
-      <h2>LOGIN AS A BUSINESS ACCOUNT</h2>
+    <div>
+      <h2 style={{textAlign:'center'}}>LOGIN AS A NON PROFIT ACCOUNT</h2>
 
       <div className="login-wrap">
         <div className="login-html">
@@ -202,8 +195,7 @@ const Login = () => {
         </div>
       </div>
       </div>
-    </>
-  )
+    </>)
 }
 
-export default Login
+export default NgoLogin

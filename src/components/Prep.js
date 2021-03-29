@@ -20,7 +20,7 @@ const Prep = () => {
              <img style={{paddingBottom:'10px',margin:'27px'}}src='https://image.flaticon.com/icons/png/128/2871/2871415.png'/>
              <br/>
 
-             <Button style={{marginLeft:'58px',backgroundColor:'#f04f47',borderColor:'transparent'}} href='/login'>Login</Button>
+             <Button style={{marginLeft:'58px',backgroundColor:'#f04f47',borderColor:'transparent'}} href='/NgoLogin'>Login</Button>
             </div>
         </div>
         {/* <FooterPage/> */}

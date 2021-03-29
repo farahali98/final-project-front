@@ -10,7 +10,7 @@ const About = () => {
        <div style={{display:'flex',flexDirection:'column',paddingTop:'10%',width:'60%'}}>
 
         <h3>Donate</h3>
-        <p style={{color:'#6c757d'}}> used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+        <p style={{color:'#6c757d', fontFamily: 'Quicksand, serif',fontWeight:'400'}}> used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
         </div>
         </div>
 
@@ -22,7 +22,7 @@ const About = () => {
        <div style={{display:'flex',flexDirection:'column',paddingTop:'10%',width:'60%'}}>
 
         <h3>Give</h3>
-        <p style={{color:'#6c757d'}}>used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+        <p style={{color:'#6c757d', fontFamily: 'Quicksand, serif',fontWeight:'400'}}>used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
         </div>
         </div>
 
@@ -33,7 +33,7 @@ const About = () => {
        <div style={{display:'flex',flexDirection:'column',paddingTop:'10%',width:'60%'}}>
 
         <h3>Exchange</h3>
-        <p style={{color:'#6c757d'}}>commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+        <p style={{color:'#6c757d', fontFamily: 'Quicksand, serif',fontWeight:'400'}}>commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
         </div>
         </div>
         </div>

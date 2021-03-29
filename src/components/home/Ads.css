@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
 
 .card {
     cursor: pointer
@@ -5,7 +6,7 @@
 
 .hd {
     font-size: 25px;
-    font-weight: 550
+    font-weight: 400
 }
 
 .card.hover,
@@ -20,7 +21,7 @@
 }
 
 .card-title {
-    font-weight: 600
+    font-weight: 400
 }
 
 button.focus,

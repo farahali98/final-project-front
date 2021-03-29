@@ -23,6 +23,7 @@ const FoodCrud = () => {
   const [cooked_at, setCooketAt] = useState('');
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -78,12 +79,27 @@ const FoodCrud = () => {
               })
       } catch (err) { console.log(err) }
   }
+  // useEffect(() => {
+  //     Axios.get('http://127.0.0.1:8000/api/food').then((response) => {
+  //         setFood(response.data);
+  //         console.log(response.data)
+  //     })
+  // }, [])
+
+
   useEffect(() => {
-      Axios.get('http://127.0.0.1:8000/api/food').then((response) => {
-          setFood(response.data);
-          console.log(response.data)
-      })
-  }, [])
+    const id = localStorage.getItem("id");
+    setLoading(true);
+    if (id != null || !!id) {
+      Axios.get(`http://localhost:8000/api/business/${id}`).then((response) => {
+        // console.log(response.data.business.name);
+       
+		setFood(response.data.business.food)
+
+      });
+      setLoading(false);
+    }
+  }, []);
 
   return (
     <>
@@ -210,9 +226,6 @@ const FoodCrud = () => {
 
 
 
-
-
-
         <Container style={{ marginTop: '100px' }}>
             <Button variant="secondary" style={{ float: 'right', margin: '20px' }} onClick={handleDisplay}>Add Donation</Button>
             <Table striped bordered hover>
@@ -226,8 +239,8 @@ const FoodCrud = () => {
                         <th>Action</th>
                     </tr>
                 </thead>
-
                 <tbody>
+
                     {food.map((food) => {
                         return <tr key={food.id}>
                             <td>{food.id}</td>

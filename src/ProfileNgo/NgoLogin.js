@@ -119,7 +119,7 @@ const NgoLogin = () => {
           {/* <Menu /> */}
 
     <div>
-      <h2 style={{textAlign:'center'}}>LOGIN AS A NON PROFIT ACCOUNT</h2>
+      <h2 style={{textAlign:'center',paddingTop:'5%'}}>LOGIN AS A NON PROFIT ACCOUNT</h2>
 
       <div className="login-wrap">
         <div className="login-html">
@@ -140,7 +140,7 @@ const NgoLogin = () => {
 					<label htmlFor="check"><span className="icon"></span> Keep me Signed in</label>
 				</div> */}
               <div className="group">
-                <button type="submit" onClick={HandleLogin} className="button" value="Sign In">
+                <button style={{color:'black'}} type="submit" onClick={HandleLogin} className="button" value="Sign In">
                   sign in
                         </button>
               </div>
@@ -182,13 +182,13 @@ const NgoLogin = () => {
               </div>
 
               <div className="group">
-                <button type="submit" onClick={handleRegister} className="button" value="Sign Up">
+                <button style={{color:'black'}} type="submit" onClick={handleRegister} className="button" value="Sign Up">
                   Sign Up
                         </button>
               </div>
               <div className="hr"></div>
               <div className="foot-lnk">
-                <label htmlFor="tab-1">Already Member?</label>
+                <label htmlFor="tab-1" style={{color:'white'}}>Already Member?</label>
               </div>
             </div>
           </div>

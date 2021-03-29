@@ -7,7 +7,7 @@ const Counter = () => {
     const [focus, setFocus] = useState(false);
 
     return (
-        <Card style={{ height: "304px", backgroundColor: 'black', color: 'white' }}>
+        <Card className="Counter-elements" style={{ height: "304px", backgroundColor: 'black', color: 'white' }}>
         <Card.Body style={{ display: 'flex', columnGap: '17%', fontSize: '2rem', justifyContent: 'center', marginTop: '8%' }}>
             <div className='counter' style={{ display: 'flex', columnGap: '10%' }}>
 

@@ -46,10 +46,8 @@ const Home = () => {
             <section >
                 <div className="home-page" style={{ paddingRight: '5%', paddingLeft: '5%', textAlign: 'center', letterSpacing: '1px', fontWeight: '300' }} className="parallex" id="About">
                     <h1 >About us</h1>
-                    <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', paddingTop: '5%' }}>
+                    <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', paddingTop: '1%' }}>
                         In publishing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-
                         graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. Wikipedia
                 </p>
                     <div>
@@ -161,11 +159,11 @@ const Home = () => {
                 </Card>
 
                 <div className="rotation" style={{ display: 'flex', columnGap: '5%' }}>
-                    <div class="flip-container">
-                        <div class="flip-this">
+                    <div className="flip-container">
+                        <div className="flip-this">
 
                             <img alt="Godot icon" src="https://images.unsplash.com/photo-1571039904131-0239647d05f5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aHVuZ2VyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                            <div class="centered">
+                            <div className="centered">
                                 <h5> Donate</h5>
                                 <p> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also </p></div>
 
@@ -174,12 +172,12 @@ const Home = () => {
 
 
 
-                    <div class="flip-container">
-                        <div class="flip-this">
+                    <div className="flip-container">
+                        <div className="flip-this">
 
 
                             <img alt="Godot icon" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9uYXRpb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
-                            <div class="centered">
+                            <div className="centered">
                                 <h5>Do good</h5>
                                 <p>Lorem Ipsu It has survived not only five centuries, but also </p></div>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal, Card, Form, Col } from "react-bootstrap";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import FooterPage from "../components/Footer/FooterPage";
 
 function NgoProfile() {
   const [name, setName] = useState("");
@@ -74,20 +75,24 @@ function NgoProfile() {
   };
   return (
     <>
-      <div style={{padding:'10px'}}>
-       
-       
+      <div style={{padding:'1%'}}>
+       <center>
+
+	   <h2 style={{backgroundColor:'black',color:'white'}}>NGO PRIVATE PROFILE</h2>
+<br/>
       <img
         style={{ height: "200px" }}
         src="https://i.pinimg.com/originals/1a/a3/13/1aa3137efb23ef4531c45c4f0c40abf8.jpg"
       />
+	        <h3 >{name}</h3>
+			<Button  style={{width:'10%',backgroundColor:'red',borderColor:'black'}} onClick={logout}>logout</Button>
 
-      <h3 >{name}</h3>
+	  </center>
+
      
     </div>
-	<Button onClick={logout}>logout</Button>
 
-    <Form>
+	<Form style={{padding:'10%'}}>
 						<Form.Row>
 							<Form.Group as={Col} md="4">
 								<Form.Label>Name</Form.Label>
@@ -184,6 +189,7 @@ function NgoProfile() {
 							Submit form
 						</Button>
 					</Form>
+					<FooterPage/>
         </>
   );
 }

@@ -9,9 +9,11 @@ import StudentViewPage from './Profile/StudentViewPage'
 import NgoLogin from './ProfileNgo/NgoLogin';
 import NgoProfile from './ProfileNgo/NgoProfile';
 import SimpleMap from './map/SimpleMap'
+import Menu from './components/menu/Menu'
+import Profile from './components/Profile';
 function App() {
   return (
-    // {token ? <Profile /> : <BrowseRouter />}
+  
 
     <BrowserRouter>
       <Switch>
@@ -27,6 +29,9 @@ function App() {
            <Route exact path='/profile' component={StudentViewPage}>
           <StudentViewPage />
           </Route>
+          <Route exact path='/hello' component={Profile}>
+          <Profile/>
+          </Route>
           <Route exact path='/profile/login' component={NgoLogin}>
           <NgoLogin/>
           </Route>
@@ -41,6 +46,7 @@ function App() {
           </Route>
       </Switch>
     </BrowserRouter>
+    
   )
 }
 

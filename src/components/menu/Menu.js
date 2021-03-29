@@ -6,11 +6,9 @@ const Menu = () => {
   return (
     <div>
       <div className="menu-container">
-
         <input type="checkbox" id="openmenu" className="hamburger-checkbox" />
-
         <div className="hamburger-icon">
-          <label for="openmenu" id="hamburger-label">
+          <label htmlfor="openmenu" id="hamburger-label">
             <span></span>
             <span></span>
             <span></span>
@@ -23,7 +21,7 @@ const Menu = () => {
           <Nav expand="lg" style={{ display: 'flex', flexDirection: 'column', paddingLeft: '10%', textAlign: 'center', paddingTop: '30%' }}>
             <Nav.Link href="/" className='menutext'>Businesses</Nav.Link>
             <Nav.Link href="/ngos" className='menutext'>NGOs</Nav.Link>
-            <Nav.Link href="/profil" className='menutext'>Profile</Nav.Link>
+            <Nav.Link href="/profile" className='menutext'>Profile</Nav.Link>
             <Nav.Link href="/food" className='menutext'>Food</Nav.Link>
           </Nav>
 

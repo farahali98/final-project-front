@@ -19,6 +19,8 @@ const Login = () => {
 
   const HandleLogin = async (e) => {
     e.preventDefault();
+    console.log('test')
+
     if (!email && !password) {
       setEmailErr('email is invalid!')
       setPassErr('Password is invalid!');
@@ -51,21 +53,19 @@ const Login = () => {
 
         }).then((response) => {
           setAuthErr(response.data.error + " email or Password");
+          console.log('test')
+          console.log(response.data.access_token)
+
           setEmailErr("");
           setPassErr("");
           setToken(response.data.access_token)
           {
             response.data &&
             response.data.access_token &&
+            console.log(response.data)
             localStorage.setItem("token", response.data.access_token);
             localStorage.setItem("id", response.data.user.id);
-            localStorage.setItem("email", response.data.user.email);
-            localStorage.setItem("password", response.data.user.password);
-            localStorage.setItem("location", response.data.user.location);
-            localStorage.setItem("phone_number", response.data.user.phone_number);
-            localStorage.setItem("url", response.data.user.url);
-            localStorage.setItem("image", response.data.user.image);
-            localStorage.setItem("name", response.data.user.name);
+            console.log(response.data)
           }
         });
       } catch (err) { console.log(err) };
@@ -75,6 +75,7 @@ const Login = () => {
   }
   const handleRegister = async (e) => {
     e.preventDefault();
+
     try {
       const link = "http://127.0.0.1:8000/api/business/register";
       const body = new FormData();
@@ -113,20 +114,20 @@ const Login = () => {
 
 
 
-  if (token) return <Redirect exact to="/" />
+  // if (token) return <Redirect exact to="/" />
 
-// if (token){
-//   <Redirect exact to="/profile" />
-// }
+if (token) return  <Redirect exact to="/profile" />
+
+
 // else{
 //   <Redirect exact to="/"/>
 // }
-  return (
+ return (
     <>
           <Menu />
 
-    <div style={{paddingTop:'10%'}}>
-      <h2>LOGIN AS A BUSINESS ACCOUNT</h2>
+    <div style={{paddingTop:'5%'}}>
+    <center><h2>LOGIN AS A BUSINESS ACCOUNT</h2> </center> 
 
       <div className="login-wrap">
         <div className="login-html">
@@ -147,7 +148,7 @@ const Login = () => {
 					<label htmlFor="check"><span className="icon"></span> Keep me Signed in</label>
 				</div> */}
               <div className="group">
-                <button type="submit" onClick={HandleLogin} className="button" value="Sign In">
+                <button style={{color:'black'}}type="submit" onClick={HandleLogin} className="button" value="Sign In">
                   sign in
                         </button>
               </div>
@@ -189,13 +190,13 @@ const Login = () => {
               </div>
 
               <div className="group">
-                <button type="submit" onClick={handleRegister} className="button" value="Sign Up">
+                <button style={{color:'black'}}type="submit" onClick={handleRegister} className="button" value="Sign Up">
                   Sign Up
                         </button>
               </div>
               <div className="hr"></div>
               <div className="foot-lnk">
-                <label htmlFor="tab-1">Already Member?</label>
+                <label htmlFor="tab-1" style={{color:'white'}}>Already Member?</label>
               </div>
             </div>
           </div>

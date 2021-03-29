@@ -35,9 +35,9 @@ const First = () => {
             </section>
             <About />
 
-            <div className="home-page" style={{ paddingBottom: '5%', paddingRight: '5%', paddingLeft: '5%', textAlign: 'center', letterSpacing: '1px', fontWeight: '300', backgroundColor: '#eeee' }} className="parallex" id="About">
+            <div className="home-page" style={{ paddingBottom: '1%', paddingRight: '5%', paddingLeft: '5%', textAlign: 'center', letterSpacing: '1px', fontWeight: '300', backgroundColor: '#eeee' }} className="parallex" id="About">
                 <h1 style={{ paddingTop: '5%' }} >About us</h1>
-                <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', fontFamily: 'Quicksand, serif', fontSize: '1.1rem', fontWeight:'300',paddingTop: '5%',lineHeight:'26px' }}>
+                <p style={{ paddingRight: '15%', paddingLeft: '15%', paddingBottom: '5%', fontFamily: 'Quicksand, serif', fontSize: '1.1rem', fontWeight:'300',paddingTop: '1%',lineHeight:'26px' }}>
                     In publishing Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 

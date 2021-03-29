@@ -4,6 +4,7 @@ import './FoodList.css';
 import './Search.css'
 import SimpleMap from "../../map/SimpleMap";
 import FooterPage from "../Footer/FooterPage";
+import { Menu } from "@material-ui/core";
 const FoodList = () => {
   const [ngo,setNgo]=useState([])
   const [food,setFood]=useState([]);
@@ -29,35 +30,39 @@ const FoodNumber=food.length;
   
     return (
       <>
+                  <Menu/>
+
       <center>
-      <div class="flexbox" >
-          <div class="search">
+      {/* <div className="flexbox" > */}
+          <div className="search">
             <h1>Search for a donation</h1>
             <div>
               <input type="text" value={search} onChange={(e) => { setSearch(e.target.value) }}  placeholder="Search . . ." required />
             </div>
           </div>
-        </div>
+        {/* =</div> */}
   </center>
-  <div class="wrapper" style={{display:'grid',gridAutoColumns:'auto',gridTemplateColumns:'1fr 1fr',columnGap:'10%',padding:'10%'}}>
+  <center>
+  <div className="wrapper" style={{backgroundColor:'black'}}>
   {(filteredData.length == 0) ? <div style={{ textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
-          filteredData.map((food) => {    return <div key={food.id} class="outer">
-      <div class="content animated fadeInLeft">
-        <span class="bg animated fadeInDown">EXCLUSIVE</span>
-        <h1>{food.name}<br/>{food.type}</h1>
-        <p style={{	width: '280px',fontSize: '13px',lineHeight: '1.4',color: '#aaa',margin: '20px 0'}}>{food.cooked_at}</p>
+          filteredData.map((food) => {    return <div key={food.id} className="outer">
+      <div className="content animated fadeInLeft">
+        <span className="bg animated fadeInDown">{food.cooked_at}</span>
+        <h1 className="foodzie-title">{food.name}<br/>{food.type}</h1>
+        <p className="foodzie-text"style={{	width: '280px',fontSize: '13px',lineHeight: '1.4',color: '#aaa',margin: '20px 0'}}></p>
         
-        <div class="button">
-          <a href={food.business.url}>{food.quantity}</a><a class="cart-btn" href="#"><i class="cart-icon ion-bag"></i>visit donator</a>
+        <div className="button">
+          <a >{food.quantity}</a><a className="cart-btn" href={food.business.url}><i className="cart-icon ion-bag"></i>visit donator</a>
         </div>
         
       </div>
-      <img className="foodzie" src={"http://localhost:8000/storage/" + food.image} width="300px" class="animated fadeInRight"/>
+      <img className="foodzie"  src={"http://localhost:8000/storage/" + food.image} width="300px" />
     </div>
     })
     }
   </div>
-  <SimpleMap/>
+  </center>
+  {/* <SimpleMap/> */}
   <FooterPage/>
   </>
     );

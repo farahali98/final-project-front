@@ -31,7 +31,7 @@ const FoodNumber=food.length;
     return (
       <>
 
-      <center style={{paddingBottom:'5%'}}>
+      <center>
         <Link to="/profile/ngo" style={{ display:'flex',color:'gray',fontWeight:'400px',fontSize:'1.5rem'}}> Back To Profile</Link>
       {/* <div className="flexbox" > */}
           <div className="search">
@@ -43,7 +43,7 @@ const FoodNumber=food.length;
         {/* =</div> */}
   </center>
   <center>
-  <div className="wrapper" style={{backgroundColor:'black'}}>
+  <div className="wrapper" >
   {(filteredData.length == 0) ? <div style={{ textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
           filteredData.map((food) => {    return <div key={food.id} className="outer">
       <div className="content animated fadeInLeft">
@@ -63,9 +63,9 @@ const FoodNumber=food.length;
   </div>
   </center>
   {/* <SimpleMap/> */}
-  <div style={{paddingTop:'15%',backgroundColor:'black'}}>
-<FooterPage/>
-</div>
+  {/* <div style={{paddingTop:'15%',backgroundColor:'black'}}> */}
+{/* <FooterPage/> */}
+{/* </div> */}
   </>
     );
   };

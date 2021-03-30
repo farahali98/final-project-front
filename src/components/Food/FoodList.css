@@ -60,7 +60,7 @@
 .bg {
 	display: inline-block;
 	color: #fff;
-	background: cornflowerblue;
+	background: cornflowerblue !important;
 	padding: 5px 10px;
 	border-radius: 50px;
 	font-size: .7em;

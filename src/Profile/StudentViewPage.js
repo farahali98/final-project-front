@@ -87,7 +87,7 @@ function StudentViewPage() {
 			<div style={{ padding: '1%' }}>
 				<center>
 
-					<h2 style={{ backgroundColor: 'black', color: 'white' }}>WELCOME TO YOUR PRIVATE BUSINESS PRIVATE PROFILE</h2>
+					<h2 style={{ backgroundColor: 'black', color: 'white' }}>WELCOME TO YOUR PRIVATE BUSINESS PROFILE</h2>
 					<br />
 
 					<img
@@ -194,12 +194,13 @@ function StudentViewPage() {
 
 				</Form.Row>
 				<Button
+				style={{backgroundColor:'blue'}}
 					onClick={() => {
 						updateInfo();
 					}}
 					type="submit"
 				>
-					Submit form
+					update
 						</Button>
 			</Form>
 

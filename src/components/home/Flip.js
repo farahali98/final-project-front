@@ -8,7 +8,7 @@ const Flip = () => {
 
           <img alt="Godot icon" style={{height:'270px',maxWidth:'none'}} src="https://images.unsplash.com/photo-1593113630400-ea4288922497?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"/>
           <div className="centered">
-            <h2 style={{fontSize:'4rem',color:'white'}}> Donate</h2>
+            <h2 style={{fontSize:'4rem',color:'white'}}> help </h2>
             <p >Help dave hungry children </p></div>
 
         </div>

@@ -18,13 +18,13 @@ const Profile = () => {
       console.log(response.data);
     });
   }, []);
-  useEffect(() => {
-    setFilteredBusiness(
-      business.filter((business) =>
-        business.name.toLowerCase().includes(search.toLowerCase())
-      )
-    );
-  }, [search, business]);
+  // useEffect(() => {
+  //   setFilteredBusiness(
+  //     business.filter((business) =>
+  //       business.name.toLowerCase().includes(search.toLowerCase())
+  //     )
+  //   );
+  // }, [search, business]);
 
   const BusinessNumber = business.length;
 
@@ -36,13 +36,13 @@ const Profile = () => {
   }, []);
 
 
-  useEffect(() => {
-    setFilteredNgo(
-      ngo.filter((ngo) =>
-        ngo.name.toLowerCase().includes(searchNgo.toLowerCase())
-      )
-    );
-  }, [searchNgo, business]);
+  // useEffect(() => {
+  //   setFilteredNgo(
+  //     ngo.filter((ngo) =>
+  //       ngo.name.toLowerCase().includes(searchNgo.toLowerCase())
+  //     )
+  //   );
+  // }, [searchNgo, business]);
   return (
     <>
               <HeaderMenu/>
@@ -61,7 +61,7 @@ const Profile = () => {
 
         <h1 style={{backgroundColor:'black',color:'white',padding:'15px'}}>Business Accounts</h1>
         {/* <div className="flexbox" > */}
-        <center>
+        {/* <center>
           {" "}
           <div className="search">
             <div>
@@ -76,11 +76,11 @@ const Profile = () => {
               />
             </div>
           </div>
-        </center>
+        </center> */}
         {/* =</div> */}
         <ul className="inds">
-        {(filteredBusiness.length == 0) ? <div style={{ justifyContent:'center', textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
-        filteredBusiness.map((business) => {
+        {/* {(filteredBusiness.length == 0) ? <div style={{ justifyContent:'center', textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> : */}
+        {business.map((business) => {
             return (
               <li className="inds_item">
                 <div className="ind">
@@ -120,7 +120,7 @@ const Profile = () => {
         </center>
 
         <h1 style={{backgroundColor:'black',color:'white',padding:'15px'}}>Non-Profit Organizations</h1>
-        <center>
+        {/* <center>
           {" "}
           <div className="search">
             <div>
@@ -135,10 +135,10 @@ const Profile = () => {
               />
             </div>
           </div>
-        </center>
+        </center> */}
         <ul className="inds">
-        {(filteredNgo.length == 0) ? <div style={{justifyContent:'center', textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> :
-        filteredNgo.map((ngo) => {            return (
+        {/* {(filteredNgo.length == 0) ? <div style={{justifyContent:'center', textAlign: "center", color: "red", fontSize: "20px", fontWeight: "bold" }}>no result found</div> : */}
+        {ngo.map((ngo) => {            return (
               <li className="inds_item">
                 <div className="ind">
                   <div className="ind_image">
